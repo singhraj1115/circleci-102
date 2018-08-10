@@ -5,6 +5,7 @@ jobs:
      - image: circleci/ruby:2.4.1-jessie
    steps:
      - checkout
+     - run: pwd
      - run: echo "A first hello"
  build:
    docker: 
