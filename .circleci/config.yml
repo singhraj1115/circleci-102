@@ -4,8 +4,14 @@ jobs:
    docker: 
      - image: circleci/ruby:2.4.1-jessie
    steps:
+    - checkout
     - run: 
-       name: "First Steps"
+       name: First Steps
        command: | 
          echo 'Hello World'
          echo 'A delivery pipeline'
+    - run:
+       name: Code has Arrived
+       command: | 
+          ls -al
+          echo '^^^^That should looks familiar^^^'
