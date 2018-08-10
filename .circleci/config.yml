@@ -18,10 +18,19 @@ jobs:
    steps:
      - checkout
      - run: echo "A more familiar hi"
-     - run: sleep 15
+     - attach_workspace:
+          at:my_workspace
+     - run: |
+          if [[ $(cat myworkspace/echo-output) == "Trying out workspaces" ]]; then 
+             echo "It worked!";
+          else 
+            echo "Nope!"; exit 1
+          fi  	
 workflows:
  version: 2
  one_and_two:
    jobs:
      - one
-     - two
+     - two: 
+         requires: 
+            - one
