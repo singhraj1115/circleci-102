@@ -5,13 +5,13 @@ jobs:
    docker:
      - image: circleci/ruby:2.4.1-jessie
    #working_directory: ""
+   environment:
+      TEST_CLUSTER_PORT: 9250
+      EST_CLUSTER_NETWORK_HOST: localhost
+      TEST_CLUSTER_COMMAND: elasticsearch-5.4.0/bin/elasticsearch
+      PLATFORM_AUTHORIZE_URL: Testing_URL
    steps: 
     - checkout
-    - run: pwd
-    - run: echo 'export TEST_CLUSTER_PORT=9250' >> $BASH_ENV
-    - run: echo 'export TEST_CLUSTER_NETWORK_HOST=localhost' >> $BASH_ENV
-    - run: echo 'export TEST_CLUSTER_COMMAND=elasticsearch-5.4.0/bin/elasticsearch' >> $BASH_ENV
-    - run: echo 'export PLATFORM_AUTHORIZE_URL=Testing_URL' >> $BASH_ENV
     - run: ls
     #- run: sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0/bin/java
     #- run: sudo update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
