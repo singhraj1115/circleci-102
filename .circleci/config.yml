@@ -6,6 +6,7 @@ jobs:
      - image: circleci/ruby:2.4.1-jessie
    #working_directory: ""
    steps: 
+    - checkout
     - run:
        name: Setting up Envrionment variable
        command: echo 'export TEST_CLUSTER_PORT=9250' >> $BASH_ENV
