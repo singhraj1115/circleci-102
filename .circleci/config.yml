@@ -1,7 +1,10 @@
 version: 2
 jobs:
  build:
-   docker:  
-     - image: circleci/ruby:2.4.1-jessie
-   steps: 
-     - checkout
+   machine: true
+   #working_directory: ""
+   envrionment: 
+    TEST_CLUSTER_PORT: '9250'
+    TEST_CLUSTER_NETWORK_HOST: localhost
+    TEST_CLUSTER_COMMAND: 'elasticsearch-5.4.0/bin/elasticsearch'
+    PLATFORM_AUTHORIZE_URL: "Testing URL"	
