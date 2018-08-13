@@ -7,7 +7,7 @@ jobs:
    #working_directory: ""
    steps: 
     - run:
-      name: "Setting up Envrionment variable"
+      name: Setting up Envrionment variable
       command: echo 'export TEST_CLUSTER_PORT=9250' >> $BASH_ENV
       command: echo 'export TEST_CLUSTER_NETWORK_HOST=localhost' >> $BASH_ENV
       command: echo 'export TEST_CLUSTER_COMMAND=elasticsearch-5.4.0/bin/elasticsearch' >> $BASH_ENV
