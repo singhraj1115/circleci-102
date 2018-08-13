@@ -21,11 +21,11 @@ jobs:
     #- run: sudo update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
     #- run: echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> ~/.circlerc
     - restore_cache:
-       key: rails-demo-{{ checksum "elasticsearch-5.4.0" }}
+       key: rails-demo-{{ checksum "elasticsearch" }}
     - run: wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.0.tar.gz
     - run: tar -xvf elasticsearch-5.4.0.tar.gz
     - run: ls -l
     - save_cache:
-        key: rails-demo-{{ checksum "elasticsearch-5.4.0" }}
+        key: rails-demo-{{ checksum "elasticsearch" }}
         paths:
           - elasticsearch-5.4.0
