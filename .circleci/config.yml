@@ -4,6 +4,7 @@ jobs:
    #machine: true
    #working_directory: ""
    docker:
+     - image: circleci/openjdk:8u131-jdk
      - image: circleci/ruby:2.4.1-jessie
        environment:
          TEST_CLUSTER_PORT: 9250
