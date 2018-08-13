@@ -10,6 +10,6 @@ jobs:
     TEST_CLUSTER_NETWORK_HOST: localhost
     TEST_CLUSTER_COMMAND: 'elasticsearch-5.4.0/bin/elasticsearch'
     PLATFORM_AUTHORIZE_URL: "Testing URL"
-  steps: 
+   steps: 
     - name: "Testing"
     - run: pwd
