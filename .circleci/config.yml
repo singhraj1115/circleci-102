@@ -13,6 +13,7 @@ jobs:
    steps: 
     - checkout
     - run: ls
+    - run: cat ~/.bashrc
     #- run: sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0/bin/java
     #- run: sudo update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
     #- run: echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> ~/.circlerc
