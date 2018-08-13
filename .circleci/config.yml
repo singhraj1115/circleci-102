@@ -13,9 +13,9 @@ jobs:
     - run: echo 'export TEST_CLUSTER_COMMAND=elasticsearch-5.4.0/bin/elasticsearch' >> $BASH_ENV
     - run: echo 'export PLATFORM_AUTHORIZE_URL=Testing_URL' >> $BASH_ENV
     - run: ls
-    - run: sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0/bin/java
-    - run: sudo update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
-    - run: echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> ~/.circlerc
+    #- run: sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0/bin/java
+    #- run: sudo update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
+    #- run: echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> ~/.circlerc
     - run: wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.0.tar.gz
     - run: tar -xvf elasticsearch-5.4.0.tar.gz
     - run: ls -l
