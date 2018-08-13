@@ -7,18 +7,15 @@ jobs:
    #working_directory: ""
    steps: 
     - checkout
-    - run:
-       name: Setting up Envrionment variable
-       command: echo 'export TEST_CLUSTER_PORT=9250' >> $BASH_ENV
-       command: echo 'export TEST_CLUSTER_NETWORK_HOST=localhost' >> $BASH_ENV
-       command: echo 'export TEST_CLUSTER_COMMAND=elasticsearch-5.4.0/bin/elasticsearch' >> $BASH_ENV
-       command: echo 'export PLATFORM_AUTHORIZE_URL=Testing_URL' >> $BASH_ENV
-       command: pwd
-    - run: 
-       name: Dependencies downloads
-       command: sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0/bin/java
-       command: sudo update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
-       command: echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> ~/.circlerc
-       command: wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.0.tar.gz
-       command: tar -xvf elasticsearch-5.4.0.tar.gz
-       command: ls -l
+    - run: pwd
+    - run: echo 'export TEST_CLUSTER_PORT=9250' >> $BASH_ENV
+    - run: echo 'export TEST_CLUSTER_NETWORK_HOST=localhost' >> $BASH_ENV
+    - run: echo 'export TEST_CLUSTER_COMMAND=elasticsearch-5.4.0/bin/elasticsearch' >> $BASH_ENV
+    - run: echo 'export PLATFORM_AUTHORIZE_URL=Testing_URL' >> $BASH_ENV
+    - run: ls
+    - run: sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0/bin/java
+    - run: sudo update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
+    - run: echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> ~/.circlerc
+    - run: wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.0.tar.gz
+    - run: tar -xvf elasticsearch-5.4.0.tar.gz
+    - run: ls -l
