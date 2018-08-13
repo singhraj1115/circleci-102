@@ -1,7 +1,9 @@
 version: 2
 jobs:
  build:
-   machine: true
+   #machine: true
+   docker:
+     - image: circleci/ruby:2.4.1-jessie
    #working_directory: ""
    envrionment: 
     TEST_CLUSTER_PORT: '9250'
