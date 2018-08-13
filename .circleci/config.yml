@@ -19,3 +19,7 @@ jobs:
     - run: wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.0.tar.gz
     - run: tar -xvf elasticsearch-5.4.0.tar.gz
     - run: ls -l
+    - save_cache:
+        key: dependency-cache
+        paths:
+          - elasticsearch-5.4.0
